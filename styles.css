@@ -1,0 +1,254 @@
+/* Asosiy stil va dizayn */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.qidir{
+    right: 700px;
+    width: 100px;
+    height: 100px;
+}
+.logo h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f39c12;
+}
+
+main {
+    padding: 80px 20px 20px;
+}
+
+.header-image {
+    position: relative;
+    width: 100%;
+    height: 300px; /* Rasmning balandligini sozlang */
+    overflow: hidden;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Rasmni qoplash uchun */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.logo-overlay {
+    position: absolute;
+    bottom: 10px;
+    right: 700px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fff;
+    border: 5px solid #000; /* Qora chekka */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; /* Logotip katta rasm ustida bo'lishi uchun */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #fff;
+    width: calc(33.333% - 20px);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.product h3, .product p {
+    margin: 0;
+    padding: 10px;
+}
+
+.product button {
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: background 0.3s;
+}
+
+.product button:hover {
+    background: #0056b3;
+}
+
+.product:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product img:hover {
+    transform: scale(1.05);
+}
+
+.cart {
+    display: none;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 300px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.cart.show {
+    display: block;
+    transform: translateX(0);
+}
+
+.cart ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.cart ul li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+#close-cart {
+    background: #dc3545;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 100%;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+#close-cart:hover {
+    background: #c82333;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Media Querylar */
+@media (max-width: 768px) {
+    .product {
+        width: calc(50% - 20px);
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        width: 100%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .logo h1 {
+        font-size: 20px;
+    }
+
+    header {
+        padding: 10px 0;
+    }
+}
